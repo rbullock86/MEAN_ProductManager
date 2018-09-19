@@ -3,15 +3,15 @@ const mongoose = require("mongoose");
 const ProductSchema = new mongoose.Schema({
     title: {
         type: String,
-        minlength: [4, "Product names need to be at least 4 characters long....sheesh."],
+        minlength: [4, "Backend Val: Product names need to be at least 4 characters long....sheesh."],
     },
     image: {
         type: String
     },
     price: {
         type: Number,
-        min: [0.01, "Products must at least cost an American Penny."],
-        required: [true, "Nothing is free."],
+        min: [0.01, "Backend Val: Products must at least cost an American Penny."],
+        required: [true, "Backend Val: Nothing is free."],
     }
 }, { timestamps : true});
 

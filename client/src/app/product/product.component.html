@@ -7,13 +7,13 @@
         <h3 class="card-title">{{ product.title }}</h3>
         <div class="card-body">
           
-          <img src="{{ product.image }}" alt="{{product.title}}" height="120px">
+          <img src="{{product.image}}" alt="{{product.title}}" height="120px">
           <h4>Price: ${{ product.price }}</h4>
         </div>
         <div class="btn-group">
 
           <button class="btn btn-primary" [routerLink]="['edit', product._id]" >Edit</button>
-          <button class="btn btn-danger">Delete</button>
+          <button class="btn btn-danger" (click)="deleteProduct(product._id)">Delete</button>
         </div>
       </div>
     </div>

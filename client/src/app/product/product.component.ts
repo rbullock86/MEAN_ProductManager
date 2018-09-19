@@ -27,4 +27,13 @@ export class ProductComponent implements OnInit {
       this._products = data;
     })
   }
+
+  deleteProduct(id){
+    console.log("DeleteProduct clicked, id:", id);
+    let obs = this._httpService.deleteProduct(id);
+    obs.subscribe(data => {
+      console.log("Delete Data:", data);
+    })
+    this.getProducts();
+  }
 }

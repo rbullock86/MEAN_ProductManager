@@ -1,37 +1,44 @@
 <div class="jumbotron">
   <h2>Create a New Product</h2>
-  <table>
-    <tr>
-      <td>
-        <h3>Title</h3>
-      </td>
-      <td>
-        <input type="text">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <h3>Price</h3>
-      </td>
-      <td>
-        <input type="number">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <h3>Image Url</h3>
-      </td>
-      <td>
-        <input type="text">
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        <button type="submit" class="btn btn-success">Create</button>
-        <span> | </span>
-        <button [routerLink]="['/products']" class="btn btn-danger">Cancel</button>
-      </td>
-    </tr>
-  </table>
+  <form (submit)="postProduct()">
+
+    <table>
+      <tr>
+        <td>
+          <h3>Title</h3>
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="product.title" name="product.title" placeholder="title">
+        </td>
+        
+        <td>{{ beValErrors.title.message }}</td>
+      </tr>
+      <tr>
+        <td>
+          <h3>Price($)</h3>
+        </td>
+        <td>
+          <input type="number" [(ngModel)]="product.price" name="product.price" placeholder="price" min="0" step=".1">
+        </td>
+        
+        <td>{{ beValErrors.price.message }}</td>
+      </tr>
+      <tr>
+        <td>
+          <h3>Image Url</h3>
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="product.image" name="product.image" placeholder="url">
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button type="submit" class="btn btn-success">Create</button>
+          <span> | </span>
+          <button [routerLink]="['/products']" class="btn btn-danger">Cancel</button>
+        </td>
+      </tr>
+    </table>
+  </form>
 </div>
