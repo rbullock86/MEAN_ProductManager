@@ -1,3 +1,37 @@
-<p>
-  productnew works!
-</p>
+<div class="jumbotron">
+  <h2>Create a New Product</h2>
+  <table>
+    <tr>
+      <td>
+        <h3>Title</h3>
+      </td>
+      <td>
+        <input type="text">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3>Price</h3>
+      </td>
+      <td>
+        <input type="number">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3>Image Url</h3>
+      </td>
+      <td>
+        <input type="text">
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button type="submit" class="btn btn-success">Create</button>
+        <span> | </span>
+        <button [routerLink]="['/products']" class="btn btn-danger">Cancel</button>
+      </td>
+    </tr>
+  </table>
+</div>

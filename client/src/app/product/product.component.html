@@ -1,3 +1,21 @@
-<p>
-  product works!
-</p>
+<div class="jumbotron">
+  <h1>Products List</h1>
+  <div class="card-group">
+
+    <div *ngFor="let product of _products" class="card col-sm-6">
+      <div class="card-body">
+        <h3 class="card-title">{{ product.title }}</h3>
+        <div class="card-body">
+          
+          <img src="{{ product.image }}" alt="{{product.title}}" height="120px">
+          <h4>Price: ${{ product.price }}</h4>
+        </div>
+        <div class="btn-group">
+
+          <button class="btn btn-primary" [routerLink]="['edit', product._id]" >Edit</button>
+          <button class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

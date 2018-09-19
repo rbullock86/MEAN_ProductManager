@@ -1,3 +1,46 @@
-<p>
-  productedit works!
-</p>
+<div class="jumbotron">
+    <h2>Edit Product</h2>
+    <form (submit)="putProduct()">
+      {{ product | json }}
+      <table>
+        <tr>
+          <td>
+            <h3>Title</h3>
+          </td>
+          <td>
+            <input 
+            type="text" 
+            [(ngModel)]="product.title" 
+            name="product.title"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h3>Price</h3>
+          </td>
+          <td>
+            <input 
+            type="number" 
+            [(ngModel)]="product.price" 
+            name="product.price" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h3>Image Url</h3>
+          </td>
+          <td>
+            <input type="text" [(ngModel)]="product.image" name="product.image">
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <span> | </span>
+            <button class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>

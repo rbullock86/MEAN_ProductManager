@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HttpService } from '../http.service';
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  _products;
+
+  constructor(
+    private _httpService: HttpService
+  ) { }
 
   ngOnInit() {
+    console.log("Initializing product page")
+    this.getProducts();
   }
 
+  getProducts(){
+    let obs = this._httpService.getProducts();
+    obs.subscribe(data => {
+      console.log("GetProductsData:", data);
+      this._products = data;
+    })
+  }
 }
